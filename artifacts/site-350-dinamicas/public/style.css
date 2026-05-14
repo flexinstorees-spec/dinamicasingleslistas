@@ -705,6 +705,11 @@ section {
     margin: 0 auto;
 }
 
+.plans-grid--single {
+    grid-template-columns: minmax(320px, 480px);
+    justify-content: center;
+}
+
 .plan-card {
     background: white;
     padding: 30px 25px;

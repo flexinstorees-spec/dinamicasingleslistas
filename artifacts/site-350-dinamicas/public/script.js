@@ -169,13 +169,6 @@ function addPlanButtonEffects() {
                 ripple.remove();
             }, 600);
             
-            // Se for botão básico, mostra o pop-up de upgrade
-            if (this.classList.contains('basic-button')) {
-                setTimeout(() => {
-                    showUpgradePopup();
-                }, 400);
-            }
-
             // Se for botão premium, navega para o checkout após o ripple
             if (isPremium && href && href !== '#') {
                 e.preventDefault();
@@ -507,39 +500,6 @@ function startNotificationSystem() {
     }, Math.random() * 7000 + 8000); // Entre 8 e 15 segundos
 }
 
-// Funções do Pop-up de Upgrade
-function showUpgradePopup(event) {
-    if (event) {
-        event.preventDefault();
-    }
-    const popup = document.getElementById('upgrade-popup');
-    if (popup) {
-        popup.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function hideUpgradePopup() {
-    const popup = document.getElementById('upgrade-popup');
-    if (popup) {
-        popup.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// Event listeners para o pop-up
-document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('upgrade-popup');
-    
-    // Fecha o pop-up ao clicar fora do card
-    if (popup) {
-        popup.addEventListener('click', function(e) {
-            if (e.target === popup) {
-                hideUpgradePopup();
-            }
-        });
-    }
-});
 
 // Controle do vídeo - Card escuro com play overlay
 function setupVideoPlayer() {
