@@ -1,11 +1,9 @@
 [build]
-  command = "npm run build"
+  command = "mkdir -p dist && cp index.html dist/ && cp -r public/. dist/"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "24"
-  NODE_ENV = "production"
-  BASE_PATH = "/"
 
 [[headers]]
   for = "/*"
