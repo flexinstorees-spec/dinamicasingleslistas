@@ -1,12 +1,10 @@
 [build]
-  base = "artifacts/site-350-dinamicas"
-  command = "npm run build"
+  base    = "artifacts/site-350-dinamicas"
+  command = "npm install --include=dev && NODE_ENV=production BASE_PATH=/ npm run build"
   publish = "artifacts/site-350-dinamicas/dist"
 
 [build.environment]
   NODE_VERSION = "24"
-  NODE_ENV = "production"
-  BASE_PATH = "/"
 
 [[headers]]
   for = "/*"
